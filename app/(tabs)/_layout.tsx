@@ -5,7 +5,7 @@ import MyTabBar from "../../components/TabBar";
 const TabLayout = () => {
   return (
     <Tabs tabBar={(props) => <MyTabBar {...props} />}>
-      <Tabs.Screen name="Main" />
+      <Tabs.Screen name="index" />
       <Tabs.Screen name="MyProfile" />
       <Tabs.Screen name="Search" />
       <Tabs.Screen name="InBox" />
