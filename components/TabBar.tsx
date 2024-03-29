@@ -1,11 +1,7 @@
 import { View, Text, TouchableOpacity, Dimensions } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Animated, {
-  Easing,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
+import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -41,7 +37,7 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             style={{
               height: 4,
               flex: 1,
-              backgroundColor: "#04524f",
+              backgroundColor: "tomato",
               flexDirection: "row",
             }}
           />
@@ -55,9 +51,8 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
           const isFocused = state.index === index;
 
           const onPress = () => {
-            marginStart.value = withTiming((windowWidth / 4) * index, {
-              duration: 180,
-              easing: Easing.inOut(Easing.quad),
+            marginStart.value = withSpring((windowWidth / 4) * index, {
+              duration: 1000,
             });
             const event = navigation.emit({
               type: "tabPress",
@@ -92,10 +87,10 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
               <FontAwesome
                 name={IconNames[label]}
                 size={20}
-                color={isFocused ? "#04524f" : "#999"}
+                color={isFocused ? "tomato" : "#999"}
               />
               <Text
-                style={{ color: isFocused ? "#04524f" : "#999", marginTop: 4 }}
+                style={{ color: isFocused ? "tomato" : "#999", marginTop: 4 }}
               >
                 {label}
               </Text>
