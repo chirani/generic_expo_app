@@ -15,6 +15,13 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
     Search: "search",
   };
 
+  const titles: any = {
+    InBox: "Inbox",
+    index: "Home",
+    MyProfile: "Profile",
+    Search: "Search",
+  };
+
   return (
     <>
       <View
@@ -52,7 +59,7 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 
           const onPress = () => {
             marginStart.value = withSpring((windowWidth / 4) * index, {
-              duration: 1000,
+              duration: 800,
             });
             const event = navigation.emit({
               type: "tabPress",
@@ -82,17 +89,20 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
               testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
-              style={{ flex: 1, alignItems: "center", paddingVertical: 12 }}
+              style={{ flex: 1, alignItems: "center", paddingVertical: 10 }}
             >
               <FontAwesome
                 name={IconNames[label]}
                 size={20}
-                color={isFocused ? "tomato" : "#999"}
+                color={isFocused ? "tomato" : "#222222"}
               />
               <Text
-                style={{ color: isFocused ? "tomato" : "#999", marginTop: 4 }}
+                style={{
+                  color: isFocused ? "tomato" : "#222222",
+                  marginTop: 4,
+                }}
               >
-                {label}
+                {titles[label]}
               </Text>
             </TouchableOpacity>
           );

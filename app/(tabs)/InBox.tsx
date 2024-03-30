@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { Text } from "@UI";
 import React from "react";
 
 const InBox = () => {
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <Text>InBox</Text>
     </View>
   );
