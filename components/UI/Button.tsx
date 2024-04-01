@@ -4,20 +4,20 @@ import {
   PressableProps,
   TextStyle,
   StyleSheet,
-} from 'react-native';
-import React from 'react';
+} from "react-native";
+import React from "react";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
-} from 'react-native-reanimated';
-import { fontSizes } from './Colors';
+} from "react-native-reanimated";
+import { fontSizes } from "./Colors";
 
 interface ButtonProps extends PressableProps {
   title: string;
   textStyle?: TextStyle;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  type?: 'regular' | 'outline' | 'transparent';
+  size?: "sm" | "md" | "lg" | "xl";
+  type?: "regular" | "outline" | "transparent";
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
@@ -26,13 +26,13 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const getButtonStyle = () => {
     switch (props.size) {
-      case 'sm':
+      case "sm":
         return styles.smallButton;
-      case 'md':
+      case "md":
         return {};
-      case 'lg':
+      case "lg":
         return styles.largeButton;
-      case 'xl':
+      case "xl":
         return styles.xlargeButton;
       default:
         return {};
@@ -41,13 +41,13 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const getButtonTextStyle = () => {
     switch (props.size) {
-      case 'sm':
+      case "sm":
         return textStyles.smallButtonText;
-      case 'md':
+      case "md":
         return {};
-      case 'lg':
+      case "lg":
         return textStyles.largeButtonText;
-      case 'xl':
+      case "xl":
         return textStyles.xlargeButtonText;
       default:
         return {};
@@ -56,11 +56,11 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const getButtonTypeStyle = () => {
     switch (props.type) {
-      case 'regular':
+      case "regular":
         return buttonTypeStyles.regular;
-      case 'transparent':
+      case "transparent":
         return buttonTypeStyles.transparent;
-      case 'outline':
+      case "outline":
         return buttonTypeStyles.outline;
       default:
         return {};
@@ -69,11 +69,11 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   const getButtonTextTypeStyle = () => {
     switch (props.type) {
-      case 'regular':
+      case "regular":
         return buttonTextTypeStyle.regular;
-      case 'transparent':
+      case "transparent":
         return buttonTextTypeStyle.transparent;
-      case 'outline':
+      case "outline":
         return buttonTextTypeStyle.outline;
       default:
         return {};
@@ -108,14 +108,16 @@ const Button: React.FC<ButtonProps> = (props) => {
         onPressOut={(e) => {
           handlePressOut();
           props.onPressOut && props.onPressOut(e);
-        }}>
+        }}
+      >
         <Text
           style={[
             textStyles.buttonText,
             getButtonTextStyle(),
             getButtonTextTypeStyle(),
             props.textStyle,
-          ]}>
+          ]}
+        >
           {props.title}
         </Text>
       </Pressable>
@@ -126,10 +128,10 @@ const Button: React.FC<ButtonProps> = (props) => {
 const styles = StyleSheet.create({
   button: {
     borderRadius: 6,
-    alignItems: 'center',
-    backgroundColor: '#ec2D01',
+    alignItems: "center",
+    backgroundColor: "#ec2D01",
     borderWidth: 2,
-    borderColor: '#ec2D01',
+    borderColor: "#ec2D01",
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
@@ -152,8 +154,8 @@ const styles = StyleSheet.create({
 const textStyles = StyleSheet.create({
   buttonText: {
     fontSize: fontSizes.regular,
-    fontWeight: '500',
-    color: 'white',
+    fontWeight: "500",
+    color: "white",
   },
   smallButtonText: {
     fontSize: 12,
@@ -169,21 +171,21 @@ const textStyles = StyleSheet.create({
 const buttonTypeStyles = StyleSheet.create({
   regular: {},
   outline: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
   },
   transparent: {
-    backgroundColor: 'transparent',
-    borderColor: 'transparent',
+    backgroundColor: "transparent",
+    borderColor: "transparent",
   },
 });
 
 const buttonTextTypeStyle = StyleSheet.create({
   regular: {},
   outline: {
-    color: '#ec2D01',
+    color: "#ec2D01",
   },
   transparent: {
-    color: 'black',
+    color: "black",
   },
 });
 

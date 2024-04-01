@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Dimensions } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome from "@expo/vector-icons/FontAwesome6";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
 
 const windowWidth = Dimensions.get("window").width;
@@ -10,9 +10,9 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 
   const IconNames: any = {
     InBox: "inbox",
-    index: "home",
+    index: "house",
     MyProfile: "user",
-    Search: "search",
+    Search: "magnifying-glass",
   };
 
   const titles: any = {

@@ -1,0 +1,38 @@
+//(property) header?: ((props: BottomTabHeaderProps) => React.ReactNode)
+import { View, Text, Image, Platform, StatusBar } from "react-native";
+import React from "react";
+import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
+import Container from "@UI/Container";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { spacing } from "@UI/Colors";
+
+const TabBarHeader = (props: BottomTabHeaderProps) => {
+  const insets = useSafeAreaInsets();
+  const hasDynamicIsland = Platform.OS === "ios" && insets.top > 50;
+  const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top;
+
+  return (
+    <>
+      <StatusBar animated={false} hidden={false} />
+      <View style={{ height: statusBarHeight }}></View>
+      <Container
+        style={{ padding: spacing.lg }}
+        alignItems="center"
+        flexDirection="row"
+      >
+        <Container alignItems="flex-start">
+          <Image
+            style={{
+              width: 80,
+              height: 40,
+            }}
+            resizeMode="contain"
+            source={require("../assets/text_logo.png")}
+          />
+        </Container>
+      </Container>
+    </>
+  );
+};
+
+export default TabBarHeader;
