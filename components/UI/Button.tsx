@@ -14,6 +14,7 @@ import Animated, {
 import { fontSizes } from "./Colors";
 
 interface ButtonProps extends PressableProps {
+  rounded?: boolean;
   title: string;
   textStyle?: TextStyle;
   size?: "sm" | "md" | "lg" | "xl";
@@ -99,7 +100,12 @@ const Button: React.FC<ButtonProps> = (props) => {
   return (
     <Animated.View style={animatedStyle}>
       <Pressable
-        style={[styles.button, getButtonStyle(), getButtonTypeStyle()]}
+        style={[
+          styles.button,
+          getButtonStyle(),
+          getButtonTypeStyle(),
+          { borderRadius: props?.rounded ? 100 : 0 },
+        ]}
         {...props}
         onPressIn={(e) => {
           handlePressIn();
@@ -129,9 +135,9 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 6,
     alignItems: "center",
-    backgroundColor: "#ec2D01",
+    backgroundColor: "#0060ff",
     borderWidth: 2,
-    borderColor: "#ec2D01",
+    borderColor: "#0060ff",
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
@@ -182,7 +188,7 @@ const buttonTypeStyles = StyleSheet.create({
 const buttonTextTypeStyle = StyleSheet.create({
   regular: {},
   outline: {
-    color: "#ec2D01",
+    color: "#0060ff",
   },
   transparent: {
     color: "black",

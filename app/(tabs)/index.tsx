@@ -7,34 +7,45 @@ import { faker } from "@faker-js/faker";
 import Container from "@UI/Container";
 import Button from "@UI/Button";
 import Text from "@UI/Text";
+import Card from "@UI/Card";
+import { Link } from "expo-router";
+
 const Main = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: "#fff", padding: spacing.lg }}>
-      <SearchBar />
+    <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}>
+      <Link
+        href="/Search"
+        style={{
+          borderWidth: 2,
+          margin: spacing.xl,
+          paddingVertical: 8,
+          paddingHorizontal: 24,
+          borderRadius: 100,
+          backgroundColor: "#efefef30",
+        }}
+      >
+        <Text style={{ textAlign: "center" }}>Search Products, Sellers...</Text>
+      </Link>
 
       <View style={{ margin: spacing.md }} />
-
-      <Container style={{ margin: spacing.lg }}>
+      <Container style={{ margin: spacing.xl }}>
         <Text style={{ textAlign: "center" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, minima?
         </Text>
       </Container>
-
       <Container
-        style={{ gap: spacing.md, padding: spacing.md }}
+        style={{ gap: spacing.md, padding: spacing.lg }}
         flexDirection="row"
       >
         <Container flex={1}>
-          <Button title="Sign up" />
+          <Button title="Sign up" rounded />
         </Container>
         <Container flex={1}>
-          <Button title="Login" type="outline" />
+          <Button title="Login" type="outline" rounded />
         </Container>
       </Container>
-
       <View style={{ margin: spacing.md }} />
-
-      <ScrollView horizontal>
+      <ScrollView horizontal style={{ padding: spacing.lg }}>
         {[1, 1, 1, 1, 1].map((_item) => (
           <ProductCardLight
             key={faker.number.int()}
@@ -44,7 +55,17 @@ const Main = () => {
           />
         ))}
       </ScrollView>
-    </View>
+      <Card style={{ margin: spacing.lg }}>
+        <Text size="h3">Need new outfits</Text>
+        <Text>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          quia voluptates nemo.
+        </Text>
+        <Container style={{ marginTop: spacing.lg }} alignItems="flex-end">
+          <Button title="Browse Our Sportsware" rounded type="outline" />
+        </Container>
+      </Card>
+    </ScrollView>
   );
 };
 

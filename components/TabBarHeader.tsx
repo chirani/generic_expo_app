@@ -5,6 +5,7 @@ import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
 import Container from "@UI/Container";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { spacing } from "@UI/Colors";
+import HeaderIcon from "./HeaderIcon";
 
 const TabBarHeader = (props: BottomTabHeaderProps) => {
   const insets = useSafeAreaInsets();
@@ -13,22 +14,31 @@ const TabBarHeader = (props: BottomTabHeaderProps) => {
 
   return (
     <>
-      <StatusBar animated={false} hidden={false} />
-      <View style={{ height: statusBarHeight }}></View>
+      <>
+        <StatusBar animated={false} hidden={false} />
+        <View style={{ height: statusBarHeight }}></View>
+      </>
+
       <Container
         style={{ padding: spacing.lg }}
         alignItems="center"
         flexDirection="row"
       >
-        <Container alignItems="flex-start">
+        <Container
+          alignItems="center"
+          justifyContent="space-between"
+          flexDirection="row"
+          flex={1}
+        >
           <Image
             style={{
-              width: 80,
-              height: 40,
+              width: 64,
+              height: 32,
             }}
             resizeMode="contain"
             source={require("../assets/text_logo.png")}
           />
+          <HeaderIcon fontName="cart-shopping" />
         </Container>
       </Container>
     </>

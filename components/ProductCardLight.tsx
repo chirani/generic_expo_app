@@ -21,7 +21,7 @@ const ProductCardLight = ({
         style={{
           aspectRatio: 1,
           overflow: "hidden",
-          backgroundColor: "red",
+          backgroundColor: "white",
           borderRadius: spacing.md,
         }}
       >

@@ -2,11 +2,18 @@ import { View, Text, TouchableOpacity, Dimensions } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import FontAwesome from "@expo/vector-icons/FontAwesome6";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
+import { useEffect } from "react";
 
 const windowWidth = Dimensions.get("window").width;
 
 const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   const marginStart = useSharedValue(0);
+
+  useEffect(() => {
+    marginStart.value = withSpring((windowWidth / 4) * state.index, {
+      duration: 800,
+    });
+  }, [state.index]);
 
   const IconNames: any = {
     InBox: "inbox",
@@ -44,7 +51,7 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             style={{
               height: 4,
               flex: 1,
-              backgroundColor: "tomato",
+              backgroundColor: "#0060ff",
               flexDirection: "row",
             }}
           />
@@ -58,9 +65,6 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
           const isFocused = state.index === index;
 
           const onPress = () => {
-            marginStart.value = withSpring((windowWidth / 4) * index, {
-              duration: 800,
-            });
             const event = navigation.emit({
               type: "tabPress",
               target: route.key,
@@ -94,11 +98,11 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
               <FontAwesome
                 name={IconNames[label]}
                 size={20}
-                color={isFocused ? "tomato" : "#222222"}
+                color={isFocused ? "#0060ff" : "#222222"}
               />
               <Text
                 style={{
-                  color: isFocused ? "tomato" : "#222222",
+                  color: isFocused ? "#0060ff" : "#222222",
                   marginTop: 4,
                 }}
               >
