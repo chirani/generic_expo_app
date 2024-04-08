@@ -17,7 +17,7 @@ const HeaderIcon: React.FC<HeaderIconProps> = (props) => {
         borderRadius: 20,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#eeeeff",
+        backgroundColor: "#dde7ff",
       }}
     >
       <FontAwesome name={fontName} size={18} />

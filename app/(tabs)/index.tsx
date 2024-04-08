@@ -1,6 +1,5 @@
 import { View, ScrollView } from "react-native";
 import React from "react";
-import SearchBar from "components/SearchBar";
 import { spacing } from "@UI/Colors";
 import ProductCardLight from "components/ProductCardLight";
 import { faker } from "@faker-js/faker";
@@ -18,8 +17,8 @@ const Main = () => {
         style={{
           borderWidth: 2,
           margin: spacing.xl,
-          paddingVertical: 8,
-          paddingHorizontal: 24,
+          paddingVertical: 10,
+          paddingHorizontal: 25,
           borderRadius: 100,
           backgroundColor: "#efefef30",
         }}
