@@ -1,6 +1,6 @@
 import { View, ScrollView } from "react-native";
 import React from "react";
-import { spacing } from "@UI/Colors";
+import { spacing } from "@UI/Theme";
 import ProductCardLight from "components/ProductCardLight";
 import { faker } from "@faker-js/faker";
 import Container from "@UI/Container";

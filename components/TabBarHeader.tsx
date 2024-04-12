@@ -4,7 +4,7 @@ import React from "react";
 import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
 import Container from "@UI/Container";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { spacing } from "@UI/Colors";
+import { spacing } from "@UI/Theme";
 import HeaderIcon from "./HeaderIcon";
 
 const TabBarHeader = (props: BottomTabHeaderProps) => {

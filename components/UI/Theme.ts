@@ -1,10 +1,12 @@
 export const theme1 = {
-  primary: "#232323",
+  primary: "#0060ff",
   secondary: "tomato",
   background: "#f7f7f7",
   text: "#232323",
 };
+
 export const colors = theme1;
+
 export const spacing = {
   xs: 4,
   sm: 6,

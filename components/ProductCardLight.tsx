@@ -1,6 +1,6 @@
 import { View, Image } from "react-native";
 import React from "react";
-import { spacing } from "@UI/Colors";
+import { spacing } from "@UI/Theme";
 import { Text } from "@UI";
 import { formatPrice, formatProductNameShort } from "../config/utils";
 

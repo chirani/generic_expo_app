@@ -4,7 +4,7 @@ import {
   TextStyle,
 } from "react-native";
 import React from "react";
-import { fontSizes } from "./Colors";
+import { fontSizes } from "./Theme";
 
 interface CustomTextProps extends RNTextProps {
   size?: keyof typeof fontSizes;

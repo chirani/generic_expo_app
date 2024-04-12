@@ -1,11 +1,55 @@
-import { View, Text } from "react-native";
+import {
+  ScrollView,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
+import { Text } from "@UI";
 import React from "react";
+import { spacing } from "@UI/Theme";
 
 const MyProfile = () => {
   return (
-    <View>
-      <Text>MyProfile</Text>
-    </View>
+    <ScrollView>
+      <Text
+        size="h3"
+        style={{ marginBottom: spacing.xl, marginHorizontal: spacing.lg }}
+      >
+        My Profile
+      </Text>
+      <ListItem title="Messages" />
+      <ListItem title="Watchlist" />
+      <ListItem title="Saved" />
+      <ListItem title="Purchased" />
+      <ListItem title="Bids & Offers" />
+      <Text
+        size="h3"
+        style={{ marginBottom: spacing.xl, marginHorizontal: spacing.lg }}
+      >
+        Payment
+      </Text>
+      <ListItem title="Satim" />
+    </ScrollView>
+  );
+};
+
+interface SearchListItemProps extends TouchableOpacityProps {
+  title: string;
+}
+
+const ListItem = (props: SearchListItemProps) => {
+  return (
+    <TouchableOpacity
+      {...props}
+      style={{
+        paddingHorizontal: 18,
+        marginHorizontal: spacing.lg,
+        paddingVertical: 9,
+        borderRadius: 8,
+        marginBottom: spacing.lg,
+      }}
+    >
+      <Text style={{ fontSize: 20 }}>{props.title}</Text>
+    </TouchableOpacity>
   );
 };
 

@@ -11,7 +11,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { fontSizes } from "./Colors";
+import { colors, fontSizes } from "./Theme";
 
 interface ButtonProps extends PressableProps {
   rounded?: boolean;
@@ -135,9 +135,9 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 6,
     alignItems: "center",
-    backgroundColor: "#0060ff",
+    backgroundColor: colors.primary,
     borderWidth: 2,
-    borderColor: "#0060ff",
+    borderColor: colors.primary,
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
@@ -188,7 +188,7 @@ const buttonTypeStyles = StyleSheet.create({
 const buttonTextTypeStyle = StyleSheet.create({
   regular: {},
   outline: {
-    color: "#0060ff",
+    color: colors.primary,
   },
   transparent: {
     color: "black",

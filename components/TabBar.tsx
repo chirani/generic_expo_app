@@ -3,6 +3,7 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import FontAwesome from "@expo/vector-icons/FontAwesome6";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
 import { useEffect } from "react";
+import { colors } from "@UI/Theme";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -51,7 +52,7 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             style={{
               height: 4,
               flex: 1,
-              backgroundColor: "#0060ff",
+              backgroundColor: colors.primary,
               flexDirection: "row",
             }}
           />
@@ -98,11 +99,11 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
               <FontAwesome
                 name={IconNames[label]}
                 size={20}
-                color={isFocused ? "#0060ff" : "#222222"}
+                color={isFocused ? colors.primary : colors.text}
               />
               <Text
                 style={{
-                  color: isFocused ? "#0060ff" : "#222222",
+                  color: isFocused ? colors.primary : colors.text,
                   marginTop: 4,
                 }}
               >

@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import Text from "./Text";
 import React from "react";
-import { colors } from "./Colors";
+import { colors, spacing } from "./Theme";
 
 interface TabsProps {
   titles: string[];
@@ -22,12 +22,11 @@ const Tabs = ({ titles, index, setTabIndex }: TabsProps) => {
         {titles.map((title, i) => (
           <TouchableOpacity key={i} onPress={() => setTabIndex(i)}>
             <Text
-              size="h3"
               style={[
                 {
                   color: i === index ? colors.primary : colors.text,
                   borderBottomColor:
-                    i === index ? colors.primary : colors.background,
+                    i === index ? colors.primary : "transparent",
                 },
                 styles.tab,
               ]}
@@ -46,13 +45,14 @@ const WindowWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   tabContainer: { width: WindowWidth, height: "auto" },
   itemContainer: { width: WindowWidth, height: 100 },
-  tab: { padding: 8, paddingHorizontal: 14, borderWidth: 2 },
+  tab: { padding: 8, paddingHorizontal: 14, borderBottomWidth: 3 },
   tabScroller: {
     width: "100%",
     flexDirection: "row",
   },
   container: {
     flexDirection: "row",
+    gap: spacing.md,
   },
 });
 
