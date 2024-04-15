@@ -1,13 +1,12 @@
-import { View } from "react-native";
-import { Text } from "@UI";
 import React from "react";
+import NotLoggedInScreen from "@screens/NotLoggedInScreen";
 
-const InBox = () => {
+const Inbox = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: "#fff" }}>
-      <Text>InBox</Text>
-    </View>
+    <>
+      <NotLoggedInScreen />
+    </>
   );
 };
 
-export default InBox;
+export default Inbox;

@@ -13,7 +13,7 @@ const Search = () => {
         <Tabs
           titles={["Recent", "Saved"]}
           index={0}
-          setTabIndex={(index: number): void => {}}
+          setTabIndex={(index: number) => {}}
         />
       </Container>
     </View>

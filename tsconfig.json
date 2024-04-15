@@ -10,6 +10,7 @@
       "@UI": [
         "./components/UI"
       ],
+      "@screens/*":["./screens/*"]
     }
   }
 }

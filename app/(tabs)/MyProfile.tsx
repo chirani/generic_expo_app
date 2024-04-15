@@ -6,6 +6,7 @@ import {
 import { Text } from "@UI";
 import React from "react";
 import { spacing } from "@UI/Theme";
+import { router } from "expo-router";
 
 const MyProfile = () => {
   return (
@@ -16,7 +17,7 @@ const MyProfile = () => {
       >
         My Profile
       </Text>
-      <ListItem title="Messages" />
+      <ListItem title="Messages" onPress={() => router.navigate("/Inbox")} />
       <ListItem title="Watchlist" />
       <ListItem title="Saved" />
       <ListItem title="Purchased" />
