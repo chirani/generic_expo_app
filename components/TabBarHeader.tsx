@@ -8,17 +8,8 @@ import { spacing } from "@UI/Theme";
 import HeaderIcon from "./HeaderIcon";
 
 const TabBarHeader = (props: BottomTabHeaderProps) => {
-  const insets = useSafeAreaInsets();
-  const hasDynamicIsland = Platform.OS === "ios" && insets.top > 50;
-  const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top;
-
   return (
     <>
-      <>
-        <StatusBar animated={false} hidden={false} />
-        <View style={{ height: statusBarHeight }}></View>
-      </>
-
       <Container
         style={{ padding: spacing.lg }}
         alignItems="center"

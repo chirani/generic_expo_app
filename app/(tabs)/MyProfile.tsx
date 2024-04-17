@@ -18,16 +18,31 @@ const MyProfile = () => {
         My Profile
       </Text>
       <ListItem title="Messages" onPress={() => router.navigate("/Inbox")} />
-      <ListItem title="Watchlist" />
-      <ListItem title="Saved" />
-      <ListItem title="Purchased" />
-      <ListItem title="Bids & Offers" />
+
+      <ListItem
+        title="Watchlist"
+        onPress={() => router.navigate("../WatchList")}
+      />
+
+      <ListItem title="Saved" onPress={() => router.navigate("../Saved")} />
+
+      <ListItem
+        title="Purchased"
+        onPress={() => router.navigate("../Purchased")}
+      />
+
+      <ListItem
+        title="Bids & Offers"
+        onPress={() => router.navigate("../Bids")}
+      />
+
       <Text
         size="h3"
         style={{ marginBottom: spacing.xl, marginHorizontal: spacing.lg }}
       >
         Payment
       </Text>
+
       <ListItem title="Satim" />
     </ScrollView>
   );
