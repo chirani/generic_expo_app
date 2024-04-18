@@ -1,4 +1,3 @@
-//To be deleted
 import { create } from "zustand";
 
 interface AuthState {

@@ -4,6 +4,7 @@ import useAuthState from "zustand/Auth";
 
 const WatchList = () => {
   const { isLogged } = useAuthState();
+
   return isLogged ? <></> : <NotLoggedInScreen />;
 };
 
