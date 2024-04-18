@@ -27,11 +27,11 @@ const useSavedSearchStore = create<SavedSearchState>((set) => ({
         (element) => element === mySearch
       );
 
-      if (savedSearchIndex === -1) {
+      if (savedSearchIndex === -1 || mySearch.trim() === "") {
         return { savedSearches: state.savedSearches };
       }
 
-      return { savedSearches: [...state.savedSearches, mySearch] };
+      return { savedSearches: [...state.savedSearches, mySearch.trim()] };
     });
   },
 }));
