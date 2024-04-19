@@ -2,7 +2,7 @@ import { ScrollView, TextInput, View } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import SearchBar from "components/SearchBar";
 import Container from "@UI/Container";
-import { spacing } from "@UI/Theme";
+import { spacing } from "config/Theme";
 import Tabs from "@UI/Tabs";
 import TabItems from "@UI/TabItems";
 import RecentSearches from "containers/RecentSearches";
@@ -30,24 +30,26 @@ const Search = () => {
             addRecentSearch(searchInput);
           }}
         />
+      </Container>
 
+      <Container style={{ marginHorizontal: spacing.xl }}>
         <Tabs
           titles={["Recent", "Saved"]}
           index={0}
           setTabIndex={(index: number) => {}}
         />
-
-        <TabItems index={0}>
-          <ScrollView>
-            <RecentSearches
-              onSetSearchInput={(value: string) => {
-                setSearchInput(value);
-              }}
-            />
-          </ScrollView>
-          <></>
-        </TabItems>
       </Container>
+
+      <TabItems index={0}>
+        <ScrollView>
+          <RecentSearches
+            onSetSearchInput={(value: string) => {
+              setSearchInput(value);
+            }}
+          />
+        </ScrollView>
+        <></>
+      </TabItems>
     </View>
   );
 };

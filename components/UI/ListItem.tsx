@@ -1,24 +1,55 @@
-import { spacing } from "./Theme";
+import { spacing } from "../../config/Theme";
 import Text from "./Text";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { Pressable, PressableProps } from "react-native";
+import Animated, {
+  useSharedValue,
+  interpolateColor,
+  withSpring,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 
-interface ListItemProps extends TouchableOpacityProps {
+interface ListItemProps extends PressableProps {
   title: string;
 }
 
 const ListItem = (props: ListItemProps) => {
+  const colorValue = useSharedValue(0);
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      backgroundColor: interpolateColor(
+        colorValue.value,
+        [0, 1],
+        ["white", "#eff6ff"]
+      ),
+    };
+  });
+
   return (
-    <TouchableOpacity
+    <Pressable
       {...props}
-      style={{
-        paddingHorizontal: 18,
-        marginHorizontal: spacing.lg,
-        paddingVertical: 9,
-        borderRadius: 8,
+      onPressIn={(e) => {
+        colorValue.value = withSpring(1 - colorValue.value);
+        props.onPressIn && props.onPressIn(e);
+      }}
+      onPressOut={(e) => {
+        colorValue.value = 0;
+        props.onPressOut && props.onPressOut(e);
       }}
     >
-      <Text style={{ fontSize: 20 }}>{props.title}</Text>
-    </TouchableOpacity>
+      <Animated.View
+        style={[
+          {
+            paddingHorizontal: 18,
+            paddingVertical: 9,
+            borderRadius: 8,
+          },
+          animatedStyle,
+        ]}
+      >
+        <Text style={{ fontSize: 20 }}>{props.title}</Text>
+      </Animated.View>
+    </Pressable>
   );
 };
 

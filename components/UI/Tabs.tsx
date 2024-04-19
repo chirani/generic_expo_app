@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import Text from "./Text";
 import React from "react";
-import { colors, spacing } from "./Theme";
+import { colors, spacing } from "../../config/Theme";
 
 interface TabsProps {
   titles: string[];

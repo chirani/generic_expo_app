@@ -11,7 +11,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { colors, fontSizes } from "./Theme";
+import { colors, fontSizes } from "../../config/Theme";
 
 interface ButtonProps extends PressableProps {
   rounded?: boolean;

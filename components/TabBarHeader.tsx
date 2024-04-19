@@ -1,10 +1,9 @@
 //(property) header?: ((props: BottomTabHeaderProps) => React.ReactNode)
-import { View, Text, Image, Platform, StatusBar } from "react-native";
+import { Image } from "react-native";
 import React from "react";
 import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
 import Container from "@UI/Container";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { spacing } from "@UI/Theme";
+import { spacing } from "config/Theme";
 import HeaderIcon from "./HeaderIcon";
 
 const TabBarHeader = (props: BottomTabHeaderProps) => {

@@ -3,7 +3,7 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import FontAwesome from "@expo/vector-icons/FontAwesome6";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
 import { useEffect } from "react";
-import { colors } from "@UI/Theme";
+import { colors } from "config/Theme";
 
 const windowWidth = Dimensions.get("window").width;
 

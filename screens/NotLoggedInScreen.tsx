@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import React from "react";
-import { spacing } from "@UI/Theme";
+import { spacing } from "config/Theme";
 import { Text, Button, Container } from "@UI";
 
 const NotLoggedInScreen = () => {

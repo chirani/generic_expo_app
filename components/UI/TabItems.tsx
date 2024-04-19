@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet, View, ViewStyle } from "react-native";
 import React, { useEffect } from "react";
 import { I18nManager } from "react-native";
 import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
-import { spacing } from "./Theme";
+import { spacing } from "../../config/Theme";
 
 interface TabItemsProps {
   children: JSX.Element[];

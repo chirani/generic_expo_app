@@ -1,7 +1,7 @@
 import { ScrollView } from "react-native";
-import { ListItem, Text } from "@UI";
+import { Container, ListItem, Text } from "@UI";
 import React from "react";
-import { spacing } from "@UI/Theme";
+import { spacing } from "config/Theme";
 import { router } from "expo-router";
 
 const MyProfile = () => {
@@ -13,33 +13,41 @@ const MyProfile = () => {
       >
         My Profile
       </Text>
-      <ListItem title="Messages" onPress={() => router.navigate("/Inbox")} />
+      <Container style={{ paddingHorizontal: spacing.md, gap: spacing.md }}>
+        <ListItem
+          title="Messages"
+          onPressOut={() => router.navigate("/Inbox")}
+        />
 
-      <ListItem
-        title="Watchlist"
-        onPress={() => router.navigate("../WatchList")}
-      />
+        <ListItem
+          title="Watchlist"
+          onPressOut={() => router.navigate("../WatchList")}
+        />
 
-      <ListItem title="Saved" onPress={() => router.navigate("../Saved")} />
+        <ListItem
+          title="Saved"
+          onPressOut={() => router.navigate("../Saved")}
+        />
 
-      <ListItem
-        title="Purchased"
-        onPress={() => router.navigate("../Purchased")}
-      />
+        <ListItem
+          title="Purchased"
+          onPressOut={() => router.navigate("../Purchased")}
+        />
 
-      <ListItem
-        title="Bids & Offers"
-        onPress={() => router.navigate("../Bids")}
-      />
-
+        <ListItem
+          title="Bids & Offers"
+          onPressOut={() => router.navigate("../Bids")}
+        />
+      </Container>
       <Text
         size="h3"
         style={{ marginBottom: spacing.xl, marginHorizontal: spacing.lg }}
       >
         Payment
       </Text>
-
-      <ListItem title="Satim" />
+      <Container style={{ paddingHorizontal: spacing.md, gap: spacing.md }}>
+        <ListItem title="Satim" />
+      </Container>
     </ScrollView>
   );
 };

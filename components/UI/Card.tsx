@@ -1,6 +1,6 @@
 import { View, ViewProps } from "react-native";
 import React from "react";
-import { spacing, colors } from "./Theme";
+import { spacing, colors } from "../../config/Theme";
 
 interface CardProps extends ViewProps {}
 const Card = (props: CardProps) => {
