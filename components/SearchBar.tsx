@@ -1,5 +1,6 @@
 import { View, Text, TextInput, TextInputProps } from "react-native";
 import React from "react";
+import { colors } from "config/Theme";
 interface SearchBarProps extends TextInputProps {
   forwardedRef?: React.RefObject<TextInput>;
 }
@@ -16,7 +17,7 @@ const SearchBar = (props: SearchBarProps) => {
           paddingHorizontal: 24,
           fontSize: 18,
         }}
-        cursorColor="tomato"
+        cursorColor={colors.primary}
       />
     </View>
   );

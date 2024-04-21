@@ -27,6 +27,7 @@ const RootLayout = () => {
         <Stack.Screen name="Purchased" />
         <Stack.Screen name="Saved" />
         <Stack.Screen name="WatchList" />
+        <Stack.Screen name="ProductPage" />
       </Stack>
     </>
   );

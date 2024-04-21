@@ -1,7 +1,9 @@
 export const theme1 = {
   primary: "#1d4ed8",
+  surface: "#eff6ff",
   secondary: "tomato",
-  background: "#f7f7f7",
+  background: "#ffffff",
+  backgroundSecondary: "#f7f7f7",
   text: "#232323",
 };
 

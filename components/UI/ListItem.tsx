@@ -1,4 +1,4 @@
-import { spacing } from "../../config/Theme";
+import { colors } from "../../config/Theme";
 import Text from "./Text";
 import { Pressable, PressableProps } from "react-native";
 import Animated, {
@@ -20,7 +20,7 @@ const ListItem = (props: ListItemProps) => {
       backgroundColor: interpolateColor(
         colorValue.value,
         [0, 1],
-        ["white", "#eff6ff"]
+        [colors.background, colors.surface]
       ),
     };
   });

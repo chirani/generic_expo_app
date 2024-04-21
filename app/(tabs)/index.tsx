@@ -7,7 +7,7 @@ import Container from "@UI/Container";
 import Button from "@UI/Button";
 import Text from "@UI/Text";
 import Card from "@UI/Card";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 const Main = () => {
   return (
@@ -47,9 +47,10 @@ const Main = () => {
       <ScrollView horizontal style={{ padding: spacing.lg }}>
         {[1, 1, 1, 1, 1].map((_item) => (
           <ProductCardLight
+            onPress={() => router.navigate("/ProductPage")}
             key={faker.number.int()}
             imageUri={faker.image.urlLoremFlickr({ category: "android" })}
-            productName={faker.commerce.productName()}
+            productName={faker.lorem.words({ min: 4, max: 10 })}
             price={faker.number.int({ min: 3_200, max: 140_000 })}
           />
         ))}
