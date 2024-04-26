@@ -2,14 +2,16 @@ import { View, ScrollView } from "react-native";
 import React from "react";
 import { spacing } from "config/Theme";
 import ProductCardLight from "components/ProductCardLight";
-import { faker } from "@faker-js/faker";
+import { faker, ne } from "@faker-js/faker";
 import Container from "@UI/Container";
 import Button from "@UI/Button";
 import Text from "@UI/Text";
 import Card from "@UI/Card";
 import { Link, router } from "expo-router";
+import useAuthState from "zustand/Auth";
 
 const Main = () => {
+  const { isLogged } = useAuthState();
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}>
       <Link
@@ -32,17 +34,30 @@ const Main = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, minima?
         </Text>
       </Container>
-      <Container
-        style={{ gap: spacing.md, padding: spacing.lg }}
-        flexDirection="row"
-      >
-        <Container flex={1}>
-          <Button title="Sign up" rounded />
+
+      {!isLogged && (
+        <Container
+          style={{ gap: spacing.md, padding: spacing.lg }}
+          flexDirection="row"
+        >
+          <Container flex={1}>
+            <Button
+              title="Sign up"
+              rounded
+              onPress={() => router.navigate("../Signup")}
+            />
+          </Container>
+          <Container flex={1}>
+            <Button
+              title="Login"
+              type="outline"
+              rounded
+              onPress={() => router.navigate("../Login")}
+            />
+          </Container>
         </Container>
-        <Container flex={1}>
-          <Button title="Login" type="outline" rounded />
-        </Container>
-      </Container>
+      )}
+
       <View style={{ margin: spacing.md }} />
       <ScrollView horizontal style={{ padding: spacing.lg }}>
         {[1, 1, 1, 1, 1].map((_item) => (

@@ -1,11 +1,11 @@
 import {
   View,
-  Image,
   Pressable,
   PressableProps,
   StyleProp,
   ViewStyle,
 } from "react-native";
+import { Image } from "expo-image";
 import React from "react";
 import { spacing } from "config/Theme";
 import { Text } from "@UI";
@@ -43,7 +43,7 @@ const ProductCardLight = (props: ProductCardLightProps) => {
       >
         <Image
           source={{ uri: imageUri }}
-          resizeMode="cover"
+          contentFit="cover"
           style={{ height: "100%", width: "100%" }}
         />
       </View>

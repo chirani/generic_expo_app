@@ -1,10 +1,13 @@
 import { ScrollView } from "react-native";
 import { Container, ListItem, Text } from "@UI";
-import React from "react";
+import React, { useEffect } from "react";
 import { spacing } from "config/Theme";
 import { router } from "expo-router";
+import useAuthState from "zustand/Auth";
 
 const MyProfile = () => {
+  const { isLogged, logOut } = useAuthState();
+
   return (
     <ScrollView contentContainerStyle={{ gap: spacing.md }}>
       <Text
@@ -47,6 +50,11 @@ const MyProfile = () => {
       </Text>
       <Container style={{ paddingHorizontal: spacing.md, gap: spacing.md }}>
         <ListItem title="Satim" />
+        {isLogged ? (
+          <ListItem title="Log out" onPress={() => logOut()} />
+        ) : (
+          <></>
+        )}
       </Container>
     </ScrollView>
   );
