@@ -1,6 +1,6 @@
-import { View, ViewProps } from "react-native";
-import React from "react";
-import { spacing, colors } from "../../config/Theme";
+import { View, ViewProps } from 'react-native'
+import React from 'react'
+import { spacing, colors } from '../../config/Theme'
 
 interface CardProps extends ViewProps {}
 const Card = (props: CardProps) => {
@@ -19,7 +19,7 @@ const Card = (props: CardProps) => {
     >
       {props.children}
     </View>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

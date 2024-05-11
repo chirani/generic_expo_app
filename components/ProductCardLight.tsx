@@ -1,25 +1,19 @@
-import {
-  View,
-  Pressable,
-  PressableProps,
-  StyleProp,
-  ViewStyle,
-} from "react-native";
-import { Image } from "expo-image";
-import React from "react";
-import { spacing } from "config/Theme";
-import { Text } from "@UI";
-import { formatPrice, formatProductNameShort } from "../config/utils";
+import { View, Pressable, PressableProps, StyleProp, ViewStyle } from 'react-native'
+import { Image } from 'expo-image'
+import React from 'react'
+import { spacing } from 'config/Theme'
+import { Text } from '@UI'
+import { formatPrice, formatProductNameShort } from '../config/utils'
 
 interface ProductCardLightProps extends PressableProps {
-  imageUri: string;
-  productName: string;
-  price: number;
-  style?: StyleProp<ViewStyle>;
+  imageUri: string
+  productName: string
+  price: number
+  style?: StyleProp<ViewStyle>
 }
 
 const ProductCardLight = (props: ProductCardLightProps) => {
-  const { productName, price, imageUri, style } = props;
+  const { productName, price, imageUri, style } = props
 
   return (
     <Pressable
@@ -36,26 +30,24 @@ const ProductCardLight = (props: ProductCardLightProps) => {
       <View
         style={{
           aspectRatio: 1,
-          overflow: "hidden",
-          backgroundColor: "white",
+          overflow: 'hidden',
+          backgroundColor: 'white',
           borderRadius: spacing.md,
         }}
       >
         <Image
           source={{ uri: imageUri }}
           contentFit="cover"
-          style={{ height: "100%", width: "100%" }}
+          style={{ height: '100%', width: '100%' }}
         />
       </View>
       <View style={{ marginBottom: spacing.xs }} />
-      <Text style={{ flexShrink: 1 }}>
-        {formatProductNameShort(productName)}
-      </Text>
+      <Text style={{ flexShrink: 1 }}>{formatProductNameShort(productName)}</Text>
       <Text size="h3" style={{ flexShrink: 1 }}>
         {formatPrice(price)}
       </Text>
     </Pressable>
-  );
-};
+  )
+}
 
-export default ProductCardLight;
+export default ProductCardLight

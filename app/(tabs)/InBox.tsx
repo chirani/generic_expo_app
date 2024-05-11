@@ -1,10 +1,10 @@
-import React from "react";
-import NotLoggedInScreen from "@screens/NotLoggedInScreen";
-import useAuthState from "zustand/Auth";
+import React from 'react'
+import NotLoggedInScreen from '@screens/NotLoggedInScreen'
+import useAuthState from 'zustand/Auth'
 
 const Inbox = () => {
-  const { isLogged } = useAuthState();
-  return !isLogged ? <NotLoggedInScreen /> : <></>;
-};
+  const { isLogged } = useAuthState()
+  return !isLogged ? <NotLoggedInScreen /> : <></>
+}
 
-export default Inbox;
+export default Inbox

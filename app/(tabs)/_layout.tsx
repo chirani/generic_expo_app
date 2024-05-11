@@ -1,12 +1,12 @@
-import React from "react";
-import { Tabs } from "expo-router";
-import MyTabBar from "../../components/TabBar";
-import TabBarHeader from "components/TabBarHeader";
+import React from 'react'
+import { Tabs } from 'expo-router'
+import MyTabBar from '../../components/TabBar'
+import TabBarHeader from 'components/TabBarHeader'
 
 const TabLayout = () => {
   return (
     <Tabs
-      sceneContainerStyle={{ backgroundColor: "white" }}
+      sceneContainerStyle={{ backgroundColor: 'white' }}
       tabBar={(props) => <MyTabBar {...props} />}
       screenOptions={{
         header: (props) => <TabBarHeader {...props} />,
@@ -17,7 +17,7 @@ const TabLayout = () => {
       <Tabs.Screen name="Search" />
       <Tabs.Screen name="Inbox" />
     </Tabs>
-  );
-};
+  )
+}
 
-export default TabLayout;
+export default TabLayout

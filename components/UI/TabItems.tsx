@@ -1,16 +1,16 @@
-import { Dimensions, StyleSheet, View, ViewStyle } from "react-native";
-import React, { useEffect } from "react";
-import { I18nManager } from "react-native";
-import Animated, { useSharedValue, withSpring } from "react-native-reanimated";
-import { spacing } from "../../config/Theme";
+import { Dimensions, StyleSheet, View, ViewStyle } from 'react-native'
+import React, { useEffect } from 'react'
+import { I18nManager } from 'react-native'
+import Animated, { useSharedValue, withSpring } from 'react-native-reanimated'
+import { spacing } from '../../config/Theme'
 
 interface TabItemsProps {
-  children: JSX.Element[];
-  containerStyle?: ViewStyle;
-  index: number;
-  animated?: boolean;
+  children: JSX.Element[]
+  containerStyle?: ViewStyle
+  index: number
+  animated?: boolean
 }
-const WindowWidth = Dimensions.get("window").width;
+const WindowWidth = Dimensions.get('window').width
 
 const TabItems = ({
   children,
@@ -18,14 +18,14 @@ const TabItems = ({
   index,
   animated = true,
 }: TabItemsProps) => {
-  const direction = I18nManager.isRTL ? 1 : -1;
-  const translateX = useSharedValue(index * WindowWidth * direction);
+  const direction = I18nManager.isRTL ? 1 : -1
+  const translateX = useSharedValue(index * WindowWidth * direction)
 
   useEffect(() => {
     translateX.value = !animated
       ? index * WindowWidth * direction
-      : withSpring(index * WindowWidth * direction);
-  }, [animated, direction, index, translateX]);
+      : withSpring(index * WindowWidth * direction)
+  }, [animated, direction, index, translateX])
 
   return (
     <View
@@ -52,16 +52,16 @@ const TabItems = ({
           >
             {child}
           </Animated.View>
-        );
+        )
       })}
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
-});
+})
 
-export default TabItems;
+export default TabItems

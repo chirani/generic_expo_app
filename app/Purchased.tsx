@@ -1,11 +1,11 @@
-import React from "react";
-import NotLoggedInScreen from "@screens/NotLoggedInScreen";
-import useAuthState from "zustand/Auth";
+import React from 'react'
+import NotLoggedInScreen from '@screens/NotLoggedInScreen'
+import useAuthState from 'zustand/Auth'
 
 const WatchList = () => {
-  const { isLogged } = useAuthState();
+  const { isLogged } = useAuthState()
 
-  return isLogged ? <></> : <NotLoggedInScreen />;
-};
+  return isLogged ? <></> : <NotLoggedInScreen />
+}
 
-export default WatchList;
+export default WatchList

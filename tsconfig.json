@@ -4,13 +4,9 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@UI/*": [
-        "./components/UI/*"
-      ],
-      "@UI": [
-        "./components/UI"
-      ],
-      "@screens/*":["./screens/*"]
+      "@UI/*": ["./components/UI/*"],
+      "@UI": ["./components/UI"],
+      "@screens/*": ["./screens/*"]
     }
   }
 }

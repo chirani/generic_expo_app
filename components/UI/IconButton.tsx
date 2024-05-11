@@ -1,99 +1,93 @@
-import {
-  Text,
-  Pressable,
-  PressableProps,
-  TextStyle,
-  StyleSheet,
-} from 'react-native';
-import React from 'react';
+import { Text, Pressable, PressableProps, TextStyle, StyleSheet } from 'react-native'
+import React from 'react'
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
-} from 'react-native-reanimated';
+} from 'react-native-reanimated'
 
 interface ButtonProps extends PressableProps {
-  title: string;
-  textStyle?: TextStyle;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  type?: 'regular' | 'outline' | 'transparent';
+  title: string
+  textStyle?: TextStyle
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  type?: 'regular' | 'outline' | 'transparent'
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const isPressed = useSharedValue(false);
-  const scale = useSharedValue(1);
+  const isPressed = useSharedValue(false)
+  const scale = useSharedValue(1)
 
   const getButtonStyle = () => {
     switch (props.size) {
       case 'sm':
-        return styles.smallButton;
+        return styles.smallButton
       case 'md':
-        return {};
+        return {}
       case 'lg':
-        return styles.largeButton;
+        return styles.largeButton
       case 'xl':
-        return styles.xlargeButton;
+        return styles.xlargeButton
       default:
-        return {};
+        return {}
     }
-  };
+  }
 
   const getButtonTextStyle = () => {
     switch (props.size) {
       case 'sm':
-        return textStyles.smallButtonText;
+        return textStyles.smallButtonText
       case 'md':
-        return {};
+        return {}
       case 'lg':
-        return textStyles.largeButtonText;
+        return textStyles.largeButtonText
       case 'xl':
-        return textStyles.xlargeButtonText;
+        return textStyles.xlargeButtonText
       default:
-        return {};
+        return {}
     }
-  };
+  }
 
   const getButtonTypeStyle = () => {
     switch (props.type) {
       case 'regular':
-        return buttonTypeStyles.regular;
+        return buttonTypeStyles.regular
       case 'transparent':
-        return buttonTypeStyles.transparent;
+        return buttonTypeStyles.transparent
       case 'outline':
-        return buttonTypeStyles.outline;
+        return buttonTypeStyles.outline
       default:
-        return {};
+        return {}
     }
-  };
+  }
 
   const getButtonTextTypeStyle = () => {
     switch (props.type) {
       case 'regular':
-        return buttonTextTypeStyle.regular;
+        return buttonTextTypeStyle.regular
       case 'transparent':
-        return buttonTextTypeStyle.transparent;
+        return buttonTextTypeStyle.transparent
       case 'outline':
-        return buttonTextTypeStyle.outline;
+        return buttonTextTypeStyle.outline
       default:
-        return {};
+        return {}
     }
-  };
+  }
 
   const handlePressIn = () => {
-    isPressed.value = true;
-    scale.value = withSpring(0.9);
-  };
+    isPressed.value = true
+    scale.value = withSpring(0.9)
+  }
 
   const handlePressOut = () => {
-    isPressed.value = false;
-    scale.value = withSpring(1);
-  };
+    isPressed.value = false
+    scale.value = withSpring(1)
+  }
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
       transform: [{ scale: scale.value }],
-    };
-  });
+    }
+  })
 
   return (
     <Animated.View style={animatedStyle}>
@@ -101,26 +95,28 @@ const Button: React.FC<ButtonProps> = (props) => {
         style={[styles.button, getButtonStyle(), getButtonTypeStyle()]}
         {...props}
         onPressIn={(e) => {
-          handlePressIn();
-          props.onPressIn && props.onPressIn(e);
+          handlePressIn()
+          props.onPressIn && props.onPressIn(e)
         }}
         onPressOut={(e) => {
-          handlePressOut();
-          props.onPressOut && props.onPressOut(e);
-        }}>
+          handlePressOut()
+          props.onPressOut && props.onPressOut(e)
+        }}
+      >
         <Text
           style={[
             textStyles.buttonText,
             getButtonTextStyle(),
             getButtonTextTypeStyle(),
             props.textStyle,
-          ]}>
+          ]}
+        >
           {props.title}
         </Text>
       </Pressable>
     </Animated.View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   button: {
@@ -146,7 +142,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 40,
   },
-});
+})
 
 const textStyles = StyleSheet.create({
   buttonText: {
@@ -163,7 +159,7 @@ const textStyles = StyleSheet.create({
   xlargeButtonText: {
     fontSize: 22,
   },
-});
+})
 
 const buttonTypeStyles = StyleSheet.create({
   regular: {},
@@ -174,7 +170,7 @@ const buttonTypeStyles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderColor: 'transparent',
   },
-});
+})
 
 const buttonTextTypeStyle = StyleSheet.create({
   regular: { fontWeight: '800' },
@@ -184,6 +180,6 @@ const buttonTextTypeStyle = StyleSheet.create({
   transparent: {
     color: 'black',
   },
-});
+})
 
-export default Button;
+export default Button

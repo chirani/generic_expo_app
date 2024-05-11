@@ -1,0 +1,30 @@
+{
+  "meta": { "date": 1234440032 },
+
+  "products": [
+    {
+      "productId": 1000,
+      "productName": "Green Caste Iron Pan Set of Four 4 items.",
+      "productContents": [10, 20, 30],
+      "priceHistory": [15000, 18000, 22000]
+    },
+    {
+      "productId": 1001,
+      "productName": "Stainless Steel Cooking Pot",
+      "productContents": [15, 25, 35],
+      "priceHistory": [12000, 16000, 20000]
+    },
+    {
+      "productId": 1002,
+      "productName": "Non-Stick Frying Pan",
+      "productContents": [12, 22, 32],
+      "priceHistory": [13000, 17000, 21000]
+    },
+    {
+      "productId": 1003,
+      "productName": "Cast Iron Dutch Oven",
+      "productContents": [18, 28, 38],
+      "priceHistory": [14000, 19000, 23000]
+    }
+  ]
+}

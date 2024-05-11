@@ -1,0 +1,51 @@
+{
+  "meta": { "date": 1234440032 },
+
+  "products": [
+    {
+      "productId": 1000,
+      "productName": "Green Caste Iron Pan Set of Four 4 items.",
+      "productItems": [10, 20, 30],
+      "price": [15000, 18000, 22000],
+      "productDescription": "Elevate your cooking experience with this set of four green cast iron pans. These durable and versatile pans are suitable for various cooking techniques, from searing to baking. Enhance your kitchen with this essential cookware collection."
+    },
+    {
+      "productId": 1001,
+      "productName": "Stainless Steel Cooking Pot",
+      "productItems": [15, 25, 35],
+      "price": [12000, 16000, 20000],
+      "productDescription": "Experience efficient cooking with this stainless steel cooking pot. Its durable construction and even heat distribution make it ideal for boiling, simmering, and stewing. Upgrade your kitchen essentials with this reliable cooking pot."
+    },
+    {
+      "productId": 1002,
+      "productName": "Non-Stick Frying Pan",
+      "productItems": [12, 22, 32],
+      "price": [13000, 17000, 21000],
+      "productDescription": "Simplify your cooking routine with this non-stick frying pan. Its premium non-stick surface ensures easy food release and effortless cleaning. From omelets to stir-fries, this versatile pan delivers exceptional results every time."
+    },
+    {
+      "productContent": "https://picsum.photos/id/132/400/400",
+      "productId": 1003,
+      "productName": "Cast Iron Dutch Oven",
+      "productItems": [18, 28, 38],
+      "price": [14000, 19000, 23000],
+      "productDescription": "Discover the versatility of this cast iron Dutch oven. Perfect for braising, baking, and frying, it distributes heat evenly for consistent cooking results. Add this timeless piece to your kitchen arsenal and enjoy delicious meals with family and friends."
+    },
+    {
+      "productContent": "https://picsum.photos/id/152/400/400",
+      "productId": 1004,
+      "productName": "Copper Saucepan Set",
+      "productItems": [14, 24, 34],
+      "price": [11000, 15000, 19000],
+      "productDescription": "Add elegance to your culinary creations with this copper saucepan set. Crafted for both style and functionality, these saucepans are perfect for a variety of cooking tasks. Elevate your kitchen décor and cooking experience with this exquisite set."
+    },
+    {
+      "productContent": "https://picsum.photos/id/552/400/400",
+      "productId": 1005,
+      "productName": "Ceramic Baking Dish",
+      "productItems": [16, 26, 36],
+      "price": [16000, 20000, 24000],
+      "productDescription": "Bake with confidence using this ceramic baking dish. Its sturdy construction and even heat distribution ensure perfect results every time. Whether you're making casseroles, lasagnas, or desserts, this versatile dish is a must-have for any home chef."
+    }
+  ]
+}

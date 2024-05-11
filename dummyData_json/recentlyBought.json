@@ -1,0 +1,20 @@
+{
+  "meta": { "date": 1234440032 },
+
+  "products": [
+    {
+      "productId": 1000,
+      "productName": "Green Caste Iron Pan Set of Four 4 items.",
+      "productContents": [10, 20, 30],
+      "priceHistory": [15000, 18000, 22000],
+      "status": "delivered"
+    },
+    {
+      "productId": 1001,
+      "productName": "Stainless Steel Cooking Pot",
+      "productContents": [15, 25, 35],
+      "priceHistory": [12000, 16000, 20000],
+      "status": "accepted"
+    }
+  ]
+}

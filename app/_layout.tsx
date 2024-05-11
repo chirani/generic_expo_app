@@ -1,12 +1,12 @@
-import React from "react";
-import { Stack } from "expo-router";
-import { Platform, StatusBar, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import React from 'react'
+import { Stack } from 'expo-router'
+import { Platform, StatusBar, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const RootLayout = () => {
-  const insets = useSafeAreaInsets();
-  const hasDynamicIsland = Platform.OS === "ios" && insets.top > 50;
-  const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top;
+  const insets = useSafeAreaInsets()
+  const hasDynamicIsland = Platform.OS === 'ios' && insets.top > 50
+  const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top
   return (
     <>
       <>
@@ -18,7 +18,7 @@ const RootLayout = () => {
         initialRouteName="(tabs)"
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: "white" },
+          contentStyle: { backgroundColor: 'white' },
         }}
       >
         <Stack.Screen name="(tabs)" />
@@ -30,7 +30,7 @@ const RootLayout = () => {
         <Stack.Screen name="ProductPage" />
       </Stack>
     </>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout
