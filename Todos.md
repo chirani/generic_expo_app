@@ -1,3 +1,3 @@
-- [ ] Creating Json dummy data.
+- [X] Creating Json dummy data.
 - [ ] Creating Async Func to Fetch.
 - [ ] TRPC or React-Query addition.
