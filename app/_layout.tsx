@@ -7,13 +7,13 @@ const RootLayout = () => {
   const insets = useSafeAreaInsets()
   const hasDynamicIsland = Platform.OS === 'ios' && insets.top > 50
   const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top
+  console.log('status bar height', statusBarHeight)
   return (
     <>
       <>
-        <StatusBar animated={false} hidden={false} />
+        <StatusBar animated={false} hidden={false} backgroundColor="red" />
         <View style={{ height: statusBarHeight }}></View>
       </>
-
       <Stack
         initialRouteName="(tabs)"
         screenOptions={{
@@ -29,6 +29,7 @@ const RootLayout = () => {
         <Stack.Screen name="WatchList" />
         <Stack.Screen name="ProductPage" />
       </Stack>
+      <View style={{ height: insets.bottom }}></View>
     </>
   )
 }

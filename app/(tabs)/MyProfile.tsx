@@ -14,7 +14,7 @@ const MyProfile = () => {
         My Profile
       </Text>
       <Container style={{ paddingHorizontal: spacing.md, gap: spacing.md }}>
-        <ListItem title="Messages" onPressOut={() => router.navigate('/Inbox')} />
+        <ListItem title="Messages" onPressOut={() => router.navigate('/InBox')} />
 
         <ListItem title="Watchlist" onPressOut={() => router.navigate('../WatchList')} />
 

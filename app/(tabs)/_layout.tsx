@@ -15,7 +15,7 @@ const TabLayout = () => {
       <Tabs.Screen name="index" />
       <Tabs.Screen name="MyProfile" />
       <Tabs.Screen name="Search" />
-      <Tabs.Screen name="Inbox" />
+      <Tabs.Screen name="InBox" />
     </Tabs>
   )
 }
