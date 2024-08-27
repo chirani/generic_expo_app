@@ -17,14 +17,14 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   }, [state.index])
 
   const IconNames: any = {
-    InBox: 'inbox',
+    Inbox: 'inbox',
     index: 'house',
     MyProfile: 'user',
     Search: 'magnifying-glass',
   }
 
   const titles: any = {
-    InBox: 'Inbox',
+    Inbox: 'Inbox',
     index: 'Home',
     MyProfile: 'Profile',
     Search: 'Search',
