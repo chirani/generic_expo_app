@@ -7,7 +7,7 @@ const RootLayout = () => {
   const insets = useSafeAreaInsets()
   const hasDynamicIsland = Platform.OS === 'ios' && insets.top > 50
   const statusBarHeight = hasDynamicIsland ? insets.top - 5 : insets.top
-  console.log('status bar height', statusBarHeight)
+
   return (
     <>
       <>
