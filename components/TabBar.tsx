@@ -58,11 +58,14 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
           />
         </Animated.View>
       </View>
-      <View style={{ backgroundColor: 'white', flexDirection: 'row' }}>
+      <View
+        style={{
+          flexDirection: 'row',
+        }}
+      >
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key]
           const label = route.name
-
           const isFocused = state.index === index
 
           const onPress = () => {
@@ -91,10 +94,14 @@ const MyTabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
               accessibilityRole="button"
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
-              testID={options.tabBarTestID}
+              // testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
-              style={{ flex: 1, alignItems: 'center', paddingVertical: 10 }}
+              style={{
+                alignItems: 'center',
+                padding: 10,
+                flex: 1,
+              }}
             >
               <FontAwesome
                 name={IconNames[label]}

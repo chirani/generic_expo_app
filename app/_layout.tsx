@@ -2,6 +2,7 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { Platform, StatusBar, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { colors } from 'config/Theme'
 
 const RootLayout = () => {
   const insets = useSafeAreaInsets()
@@ -11,7 +12,7 @@ const RootLayout = () => {
   return (
     <>
       <>
-        <StatusBar animated={false} hidden={false} backgroundColor="red" />
+        <StatusBar animated={false} hidden={false} backgroundColor={colors.primary} />
         <View style={{ height: statusBarHeight }}></View>
       </>
       <Stack

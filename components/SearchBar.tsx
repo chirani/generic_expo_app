@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TextInputProps } from 'react-native'
+import { View, TextInput, TextInputProps } from 'react-native'
 import React from 'react'
 import { colors } from 'config/Theme'
 interface SearchBarProps extends TextInputProps {
